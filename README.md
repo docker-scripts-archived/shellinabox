@@ -9,26 +9,53 @@ easier for me to assign and evaluate homeworks.
 
 ## Installation
 
-  - Get scripts from GitHub:
+  - First install `ds` and `wsproxy`:
+     + https://github.com/docker-scripts/ds#installation
+     + https://github.com/docker-scripts/wsproxy#installation
+
+  - Then get the shellinabox scripts from github:
     ```
-    mkdir -p /opt/src/
-    cd /opt/src/
-    git clone https://github.com/docker-build/shellinabox
+    git clone https://github.com/docker-scripts/shellinabox /usr/local/src/shellinabox
     ```
 
-  - Create a working directory for the container:
+  - Create a working directory for the shellinabox container:
     ```
-    mkdir -p /opt/workdir/shell1
-    cd /opt/workdir/shell1/
-    ln -s /opt/src/shellinabox .
-    cp shellinabox/utils/settings.sh .
+    mkdir -p /var/containers/shell1
+    cd /var/containers/shell1/
+    ```
+
+  - Initialize and fix the settings:
+    ```
+    ds init /usr/local/src/shellinabox
     vim settings.sh
+    ds info
     ```
 
-  - Build image, create the container, start it and configure it:
+  - Build image, create the container and configure it:
     ```
-    shellinabox/docker/build.sh
-    shellinabox/docker/create.sh
-    shellinabox/docker/start.sh
-    shellinabox/config.sh
+    ds build
+    ds create
+    ds config
+    ```
+
+  - Tell `wsproxy` that the domain `shell.example.org` is served by the container `shell1`:
+    ```
+    cd /var/container/wsproxy/
+    ds domains-add shell1 shell.example.org
+    ds reload
+    ```
+
+  - If the domain is not a real one, add to `/etc/hosts` the line
+    `127.0.0.1 shell.example.org` and then try
+    https://shell.example.org in browser.
+
+
+## Usage
+
+  - Other DS commands:
+    ```
+    ds shell
+    ds stop
+    ds start
+    ds snapshot
     ```
