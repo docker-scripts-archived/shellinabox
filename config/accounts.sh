@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 ### Create accounts for all the students.
 ### The file accounts.txt contains a list of usernames and passwords
 ### separated by column (:).

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 ### customize shellinabox
 
 ### set the port to 443

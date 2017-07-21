@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 ### other customizations
 
 source /host/settings.sh
