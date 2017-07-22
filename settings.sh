@@ -2,7 +2,7 @@ SRC=/usr/local/src/shellinabox
 
 ### Docker settings.
 IMAGE=shellinabox
-CONTAINER=shell
+CONTAINER=shell1-example-org
 #PORTS="443:443"   ## port to access shellinabox if it is standalone
 PORTS=    ## no port when it is behind wsproxy
 

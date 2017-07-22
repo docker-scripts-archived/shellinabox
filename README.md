@@ -38,16 +38,16 @@ easier for me to assign and evaluate homeworks.
     ds config
     ```
 
-  - Tell `wsproxy` that the domain `shell.example.org` is served by the container `shell1`:
+  - Tell `wsproxy` that the domain `shell1.example.org` is served by the container `shell1`:
     ```
     cd /var/container/wsproxy/
-    ds domains-add shell1 shell.example.org
+    ds domains-add shell1 shell1.example.org
     ds reload
     ```
 
   - If the domain is not a real one, add to `/etc/hosts` the line
-    `127.0.0.1 shell.example.org` and then try
-    https://shell.example.org in browser.
+    `127.0.0.1 shell1.example.org` and then try
+    https://shell1.example.org in browser.
 
 
 ## Usage
