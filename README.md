@@ -7,7 +7,7 @@ it is more fun when you use Linux in a multi-user environment. It is also
 easier for me to assign and evaluate homeworks.
 
 
-## Installation
+## Install
 
   - First install `ds` and `wsproxy`:
      + https://github.com/docker-scripts/ds#installation
@@ -38,24 +38,33 @@ easier for me to assign and evaluate homeworks.
     ds config
     ```
 
-  - Tell `wsproxy` that the domain `shell1.example.org` is served by the container `shell1`:
+
+## Access the website
+
+  - Tell `wsproxy` that the domain `shell1.example.org` is served by the container `shell1-example-org`:
     ```
     cd /var/container/wsproxy/
-    ds domains-add shell1 shell1.example.org
-    ds reload
+    ds domains-add shell1-example-org shell1.example.org
     ```
 
-  - If the domain is not a real one, add to `/etc/hosts` the line
+  - If the domain is a real one, get a free SSL certificate from letsencrypt.org:
+    ```
+    ds get-ssl-cert user@example.org shell1.example.org --test
+    ds get-ssl-cert user@example.org shell1.example.org
+    ```
+
+ - If the domain is not a real one, add to `/etc/hosts` the line
     `127.0.0.1 shell1.example.org` and then try
     https://shell1.example.org in browser.
 
 
-## Usage
+## Other commands
 
-  - Other DS commands:
-    ```
-    ds shell
-    ds stop
-    ds start
-    ds snapshot
-    ```
+```
+ds shell
+ds stop
+ds start
+ds snapshot
+
+ds help
+```
