@@ -13,20 +13,13 @@ easier for me to assign and evaluate homeworks.
      + https://github.com/docker-scripts/ds#installation
      + https://github.com/docker-scripts/wsproxy#installation
 
-  - Then get the shellinabox scripts from github:
-    ```
-    git clone https://github.com/docker-scripts/shellinabox /usr/local/src/shellinabox
-    ```
+  - Then get the shellinabox scripts from github: `ds pull shellinabox`
 
-  - Create a working directory for the shellinabox container:
-    ```
-    mkdir -p /var/containers/shell1
-    cd /var/containers/shell1/
-    ```
+  - Create a directory for the shellinabox container: `ds init shellinabox @shell1`
 
-  - Initialize and fix the settings:
+  - Fix the settings:
     ```
-    ds init /usr/local/src/shellinabox
+    cd /var/ds/shell1/
     vim settings.sh
     ds info
     ```
@@ -43,7 +36,7 @@ easier for me to assign and evaluate homeworks.
 
   - Tell `wsproxy` that the domain `shell1.example.org` is served by the container `shell1-example-org`:
     ```
-    cd /var/container/wsproxy/
+    cd /var/ds/wsproxy/
     ds domains-add shell1-example-org shell1.example.org
     ```
 

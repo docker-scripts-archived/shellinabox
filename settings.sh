@@ -1,4 +1,4 @@
-SRC=/usr/local/src/shellinabox
+APP=shellinabox
 
 ### Docker settings.
 IMAGE=shellinabox

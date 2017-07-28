@@ -11,9 +11,9 @@ cmd_config() {
     sleep 3
 
     # copy accounts.txt and testing scripts
-    [[ -f accounts.txt ]] || cp $SRC/accounts.txt .
+    [[ -f accounts.txt ]] || cp $APP_DIR/accounts.txt .
     mkdir -p testing
-    cp -a $SRC/testing/* testing/
+    cp -a $APP_DIR/testing/* testing/
 
     # run config scripts
     local config="
