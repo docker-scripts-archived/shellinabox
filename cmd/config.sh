@@ -7,31 +7,21 @@ _EOF
 }
 
 cmd_config() {
-    cmd_start
-    sleep 3
-
     # copy accounts.txt and testing scripts
     [[ -f accounts.txt ]] || cp $APP_DIR/accounts.txt .
     mkdir -p testing
     cp -a $APP_DIR/testing/* testing/
 
     # run config scripts
-    local config="
-        set_prompt
-        ssmtp
+    ds runcfg set_prompt
+    ds runcfg ssmtp
 
-        shellinabox
-        misc
-        accounts
-    "
-    for cfg in $config; do
-        ds runcfg $cfg
-    done
+    ds runcfg shellinabox
+    ds runcfg misc
+    ds runcfg accounts
 
     # copy testing scripts inside the container
     for file in testing/*; do
         docker cp $file $CONTAINER:/usr/local/bin/
     done
-
-    cmd_restart
 }

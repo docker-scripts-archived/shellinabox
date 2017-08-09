@@ -34,16 +34,12 @@ easier for me to assign and evaluate homeworks.
 
 ## Access the website
 
-  - Tell `wsproxy` that the domain `shell1.example.org` is served by the container `shell1-example-org`:
-    ```
-    cd /var/ds/wsproxy/
-    ds domains-add shell1-example-org shell1.example.org
-    ```
+  - Tell `wsproxy` to manage the domain of this container: `ds wsproxy add`
 
-  - If the domain is a real one, get a free SSL certificate from letsencrypt.org:
+  - Tell `wsproxy` to get a free letsencrypt.org SSL certificate for this domain (if it is a real one):
     ```
-    ds get-ssl-cert user@example.org shell1.example.org --test
-    ds get-ssl-cert user@example.org shell1.example.org
+    ds wsproxy ssl-cert --test
+    ds wsproxy ssl-cert
     ```
 
  - If the domain is not a real one, add to `/etc/hosts` the line
