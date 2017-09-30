@@ -13,12 +13,12 @@ cmd_config() {
     cp -a $APP_DIR/testing/* testing/
 
     # run config scripts
-    ds runcfg set_prompt
-    ds runcfg ssmtp
+    ds inject set_prompt.sh
+    ds inject ssmtp.sh
 
-    ds runcfg shellinabox
-    ds runcfg misc
-    ds runcfg accounts
+    ds inject shellinabox.sh
+    ds inject misc.sh
+    ds inject accounts.sh
 
     # copy testing scripts inside the container
     for file in testing/*; do
