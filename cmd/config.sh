@@ -7,6 +7,8 @@ _EOF
 }
 
 cmd_config() {
+    ds inject ubuntu-fixes.sh
+
     # copy accounts.txt and testing scripts
     [[ -f accounts.txt ]] || cp $APP_DIR/accounts.txt .
     mkdir -p testing
