@@ -17,19 +17,10 @@ easier for me to assign and evaluate homeworks.
 
   - Create a directory for the shellinabox container: `ds init shellinabox @shell1`
 
-  - Fix the settings:
-    ```
-    cd /var/ds/shell1/
-    vim settings.sh
-    ds info
-    ```
+  - Fix the settings: `cd /var/ds/shell1/; vim settings.sh`
 
-  - Build image, create the container and configure it:
-    ```
-    ds build
-    ds create
-    ds config
-    ```
+
+  - Build image, create the container and configure it: `ds make`
 
 
 ## Access the website
