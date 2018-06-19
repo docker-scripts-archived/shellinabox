@@ -10,6 +10,7 @@ CMD ["/sbin/init"]
 WORKDIR /host
 
 ### Update and upgrade and install some other packages.
+RUN echo y | unminimize
 RUN apt -y install openssl shellinabox
 RUN apt -y install less vim aptitude build-essential locales ssmtp \
             wget figlet rig pv fortune fortunes-min fortunes-ubuntu-server
