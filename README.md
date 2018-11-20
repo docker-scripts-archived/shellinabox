@@ -19,7 +19,6 @@ easier for me to assign and evaluate homeworks.
 
   - Fix the settings: `cd /var/ds/shell1/; vim settings.sh`
 
-
   - Build image, create the container and configure it: `ds make`
 
 

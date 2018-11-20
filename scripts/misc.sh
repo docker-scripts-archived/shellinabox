@@ -22,7 +22,6 @@ cat <<EOF >> /etc/security/limits.conf
 ### custom
 @student        hard    nproc           1000
 *               hard    core            0
-@noroot         hard    date            102400
 @student        hard    cpu             2
 @student        hard    maxlogins       1
 EOF
